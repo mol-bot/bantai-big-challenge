@@ -23,8 +23,17 @@
       }
     
     while (fscanf(input_file," <url>%*[^<]</url><title>%9999[^<]</title><body>%99999[^<]</body> ", data.title, data.kalimat) == 2){ 
-        fprintf(hasil, "%s %s\n", data.title, data.kalimat); 
-        hasil = tolower(hasil);
+       
+        
+        for (int i = 0; data.title[i]; i++ ){
+            data.title[i] = tolower(data.title[i]);
+        }
+
+        for (int i = 0; data.kalimat[i]; i++){
+            data.kalimat[i] = tolower(data.kalimat[i]);
+        }
+
+         fprintf(hasil, "%s %s\n", data.title, data.kalimat); 
     }
 
 fclose(hasil);
