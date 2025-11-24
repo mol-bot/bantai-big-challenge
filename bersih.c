@@ -24,7 +24,7 @@
     
     while (fscanf(input_file," <url>%*[^<]</url><title>%9999[^<]</title><body>%99999[^<]</body> ", data.title, data.kalimat) == 2){ 
         fprintf(hasil, "%s %s\n", data.title, data.kalimat); 
-        hasil = toloweCase(hasil);
+        hasil = tolowerCase(hasil);
     }
 
 fclose(hasil);
